@@ -47,9 +47,27 @@ def eda(df):
     print('the total column wise missing values are: ')
     print(df.isnull().sum(),2*'\n')
     
-    
-#function for counting values from each colums 
+ 
+
+#replacing values in function
+def replace_val(df, column , dictionary,fill_na= True):
+	''' 
+	This function is used to replace/map values from the column with
+	the mappings given in the dict and if fillna is true , replace the 
+	categorical variables with the mode of that column and for continous 
+	variables replace it with mean of the data in that column 
+	'''
+	if type(df['column']=='object'):
+		if fillna=='True':
+			df.column.map(dictionary).fillna(df.column.mean())
+		else
+		
+		
+
+
+
 	
+
 
 
 
