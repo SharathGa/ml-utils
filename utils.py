@@ -41,6 +41,9 @@ def eda(df):
     #checking the type of the columns
     print('The the following is the info: ')
     print(df.info(),2*'\n')
+
+    #value_counts of the categorical variables
+    if type(df[x]) in 
    
     
     #checking the total missing values columnwise
@@ -57,11 +60,26 @@ def replace_val(df, column , dictionary,fill_na= True):
 	categorical variables with the mode of that column and for continous 
 	variables replace it with mean of the data in that column 
 	'''
-	if type(df['column']=='object'):
-		if fillna=='True':
-			df.column.map(dictionary).fillna(df.column.mean())
-		else
-		
+	# if type(df['column']=='object'):
+	# 	if fillna=='True':
+	# 		df.column.map(dictionary).fillna(df.column.mean())
+	# 	else:
+
+#Calculating the frequency counts of categorical columns of the data
+def catfreq(df,top= 5):
+    
+    '''This function calculates the top n value counts for categorical variables. If the total categorical
+       columns are greater than 8, It becomes cumbersome to view the reports. I am thinking on an idea solve this 
+    .'''
+    cat = df.select_dtypes(include = ['object']).columns
+    if len(cat)> 8:
+        print ('There are more than 8 columns')
+    else:
+        
+        for x in cat:
+             print('The Frequency counts for {} column:'.format(x))
+             print( df[x].value_counts()[:top], '\n')
+
 		
 
 
