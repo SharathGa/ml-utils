@@ -14,8 +14,9 @@ import numpy as np
 	These are the commonly used functions that we need for
 	classfication problems and for test and analysis.
 	The following are list of functions available in this class
-	1.eda
-	2.
+	1.eda - does the premilinary exploratory data analysis.
+	2.catfreq - calculates the value counts of categorical variables.
+    
 """
 
 
@@ -41,9 +42,6 @@ def eda(df):
     #checking the type of the columns
     print('The the following is the info: ')
     print(df.info(),2*'\n')
-
-    #value_counts of the categorical variables
-    if type(df[x]) in 
    
     
     #checking the total missing values columnwise
