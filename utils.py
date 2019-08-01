@@ -16,7 +16,7 @@ import numpy as np
 	The following are list of functions available in this class
 	1.eda - does the premilinary exploratory data analysis.
 	2.catfreq - calculates the value counts of categorical variables.
-    
+
 """
 
 
@@ -70,10 +70,10 @@ def catfreq(df,top= 5):
        columns are greater than 8, It becomes cumbersome to view the reports. I am thinking on an idea solve this 
     .'''
     cat = df.select_dtypes(include = ['object']).columns
+
     if len(cat)> 8:
         print ('There are more than 8 columns')
     else:
-        
         for x in cat:
              print('The Frequency counts for {} column:'.format(x))
              print( df[x].value_counts()[:top], '\n')
