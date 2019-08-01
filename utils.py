@@ -26,24 +26,20 @@ def eda(df):
     #checking the shape of the data
     print('The dimensions of the data is:')
     print(df.shape,'\n')
-   
     
     #listing the name of the columns 
     print('The column names are:')
     print(df.columns,'\n')
 
-    
     #inspecting the head and tail of a df 
     print('The head and tail of a df:')
     cf = pd.concat([df.head(), df.tail()],axis = 0 )
     print(cf,2*'\n')
   
-    
     #checking the type of the columns
     print('The the following is the info: ')
     print(df.info(),2*'\n')
    
-    
     #checking the total missing values columnwise
     print('the total column wise missing values are: ')
     print(df.isnull().sum(),2*'\n')
@@ -68,9 +64,9 @@ def catfreq(df,top= 5):
     
     '''This function calculates the top n value counts for categorical variables. If the total categorical
        columns are greater than 8, It becomes cumbersome to view the reports. I am thinking on an idea solve this 
-    .'''
-    cat = df.select_dtypes(include = ['object']).columns
+    '''
 
+    cat = df.select_dtypes(include = ['object']).columns
     if len(cat)> 8:
         print ('There are more than 8 columns')
     else:
