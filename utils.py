@@ -18,6 +18,7 @@ import numpy as np
 	2.catfreq - calculates the value counts of categorical variables.
 
 """
+
 def eda(df):
     #wrting a funciton to do the basic necessary eda analysis of a dataframe
     
@@ -72,6 +73,13 @@ def catfreq(df,top= 5):
              print('The Frequency counts for {} column:'.format(x))
              print( df[x].value_counts()[:top], '\n')
 
+#converting a word to number : 
+def convert_to_int(word):
+    ''' we are going to write a universal fucntion that replaces the 
+    categorical values in the categorical column with a mapped value
+    from the dictionary'''
+    wordmap = { 'one':1 , 'two':2 , 'three':3}
+    return wordmap[word]
 
 		
 
