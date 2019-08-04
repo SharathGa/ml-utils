@@ -81,6 +81,9 @@ def convert_to_int(word):
     wordmap = { 'one':1 , 'two':2 , 'three':3}
     return wordmap[word]
 
+
+#adding things to see if they appear in the master.
+
 		
 
 
