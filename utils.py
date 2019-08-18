@@ -43,6 +43,9 @@ def eda(df):
     print('the total column wise missing values are: ')
     print(df.isnull().sum(),2*'\n')
     
+    #checking the relative percentage of missing values wrt to dataset
+    print('The relative percentage of missing values to the dataset: ') 
+    print((df.isnull().sum()/ len(df) )*100 ) 
  
 
 #replacing values in function
@@ -83,6 +86,16 @@ def convert_to_int(word):
 
 
 #adding things to see if they appear in the master.
+
+#Adding a missing value function calculator function 
+''' This function will calculate and display the missing values in the dataset
+ 
+ ''' 
+
+def mv( df ) : 
+
+    return df.isnull().sum() 
+
 
 		
 
