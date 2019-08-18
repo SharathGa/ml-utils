@@ -91,9 +91,7 @@ def convert_to_int(word):
 ''' This function will calculate and display the missing values in the dataset
  
  ''' 
-
 def mv( df ) : 
-
     return df.isnull().sum() 
 
 
