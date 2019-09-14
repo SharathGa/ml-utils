@@ -7,9 +7,6 @@ This contains all the reusable code that I need for ML
 import pandas as pd 
 import numpy as np 
 
-#first eda function for preliminary analysis 
-# class klassifyer(object):
-
 """
 	These are the commonly used functions that we need for
 	classfication problems and for test and analysis.
@@ -46,9 +43,11 @@ def eda(df):
     #checking the relative percentage of missing values wrt to dataset
     print('The relative percentage of missing values to the dataset: ') 
     print((df.isnull().sum()/ len(df) )*100 ) 
- 
 
-#replacing values in function
+
+
+
+ #replacing values in function
 def replace_val(df, column , dictionary,fill_na= True):
 	''' 
 	This function is used to replace/map values from the column with
@@ -59,7 +58,10 @@ def replace_val(df, column , dictionary,fill_na= True):
 	# if type(df['column']=='object'):
 	# 	if fillna=='True':
 	# 		df.column.map(dictionary).fillna(df.column.mean())
-	# 	else:
+	# 	else
+
+
+
 
 #Calculating the frequency counts of categorical columns of the data
 def catfreq(df,top= 5):
@@ -76,6 +78,9 @@ def catfreq(df,top= 5):
              print('The Frequency counts for {} column:'.format(x))
              print( df[x].value_counts()[:top], '\n')
 
+
+
+
 #converting a word to number : 
 def convert_to_int(word):
     ''' we are going to write a universal fucntion that replaces the 
@@ -85,14 +90,36 @@ def convert_to_int(word):
     return wordmap[word]
 
 
-#adding things to see if they appear in the master.
 
-#Adding a missing value function calculator function 
+
+#Adding a missing value imputation function calculator function 
 ''' This function will calculate and display the missing values in the dataset
- 
  ''' 
-def mv( df ) : 
-    return df.isnull().sum() 
+def mvc( df ) :
+''' this will impute categorical values in the data '''  
+    for col in df.columns:
+        #for a single column it is dtype, and for a all columns
+        # it is dtypes. 
+        if df[col].dtype == 'object':
+            df[col] = cd Decd df[col].fillna(df[col].value_counts().index[0])
+
+
+
+
+''' for imputing values missing in numeric columns ''' 
+def mvn(df, impute_type ) : 
+    for col in df.columns:
+        if df[col].dtype == 'numeric':
+            if impute_type == 'median':
+                df[col] = df[col].fillna(df[col].median())
+            else:
+                df[col] = df[col].fillna(df[col].mean())
+
+
+
+
+#adding new stuff 
+
 
 
 		
